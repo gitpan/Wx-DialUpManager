@@ -55,7 +55,7 @@ use Wx();
 use Exporter();
 use base qw( Exporter Wx::EvtHandler );
 use vars qw[ $VERSION @EXPORT_OK %EXPORT_TAGS ];
-$VERSION = '0.02',
+$VERSION = '0.03',
 @EXPORT_OK = qw[ EVT_DIALUP_CONNECTED EVT_DIALUP_DISCONNECTED ];
 
 
@@ -73,7 +73,6 @@ sub EVT_DIALUP_CONNECTED($) {
 sub EVT_DIALUP_DISCONNECTED($) {
     Wx::wxTheApp()->Connect( -1, -1, &Wx::wxEVT_DIALUP_CONNECTED, $_[0] )
 }
-
 
 
 package Wx::DialUpEvent;

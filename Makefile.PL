@@ -1,3 +1,4 @@
+#!/usr/bin/perl -w
 
 BEGIN {
     eval {
@@ -11,6 +12,8 @@ BEGIN {
 }
 
 use ExtUtils::MakeMaker qw[ prompt ];
+use strict;
+
 
 print q[
 
@@ -24,7 +27,7 @@ $ENV{WXDIR} = $ENV{WXWIN} if $ENV{WXWIN};
 $ENV{WXDIR} = $ENV{WXWIN} if $ENV{WXDIR};
 
 unless( $ENV{WXDIR} or $ENV{WXWIN} ) {
-    $ENV{WXWIN} = prompt('Where is WXWIN? (aka WXDIR) ', finWxwin() );
+    $ENV{WXWIN} = prompt('Where is WXWIN? (aka WXDIR) ', findWxwin() );
     $ENV{WXDIR} = $ENV{WXWIN};
 }
 
@@ -59,4 +62,4 @@ sub findWxwin {
 
 __END__
 perl Makefile.PL && nmake realclean && cls && perl Makefile.PL && nmake test
-cpan-upload -mailto yo@yo.yo -verbose -user podmaster  Wx-DialUpManager-0.02.tar.gz
+cpan-upload -mailto yo@yo.yo -verbose -user podmaster  Wx-DialUpManager-0.03.tar.gz
