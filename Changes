@@ -1,0 +1,10 @@
+Revision history for Perl extension Wx::DialUpManager
+
+0.02  Mon Nov 10 07:31:55 2003
+    - more testing goodness
+    - finally fixed event handlers according to mattias advice
+    - added pod, LICENSE, Changes, MANIFEST.SKIP, improved README
+
+0.01  Tue Mar 18 06:51:54 2003
+    - finished working version
+    - added tests
